@@ -69,7 +69,7 @@ class my_env:
         info = {'origin_reward': reward,
                 'power_penalty': [power_penalty]
                 }
-        reward = [r + power_penalty for r in reward]
+        reward = [sum(reward) + power_penalty] * self.n_agents
         if self.episode % self.log_interval == 0 and self.episode != 0:
             log_state = True
         else:
